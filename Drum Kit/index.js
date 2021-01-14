@@ -15,6 +15,7 @@ for (var i = 0; i < BUTTONARRAY.length; i++) {
   BUTTONARRAY[i].addEventListener("click", function() {
     var buttonInnerHTML = this.innerHTML;
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
   });
 }
 
@@ -23,6 +24,7 @@ for (var i = 0; i < BUTTONARRAY.length; i++) {
 document.addEventListener("keypress", function(event){
   var eventKey = event.key;
     makeSound(eventKey);
+    buttonAnimation(eventKey);
 });
 
 //오디오 재생 함수
@@ -53,4 +55,14 @@ function makeSound(key){
 
     default:console.log(key);
   }
+}
+
+// 에니메이션 재생함수
+
+function buttonAnimation(currentKey){
+  var activeButton = document.querySelector("."+currentKey);
+  activeButton.classList.add("pressed");
+  setTimeout(function(){
+    activeButton.classList.remove("pressed");
+  }, 100)
 }
