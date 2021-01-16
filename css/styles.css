@@ -33,7 +33,7 @@ h1{
     color: #eaf6f6;
   }
   p{
-    line-height: 2;
+    line-height: 0;
   }
   hr{
     border: dotted  #EAF6F6 6px;
